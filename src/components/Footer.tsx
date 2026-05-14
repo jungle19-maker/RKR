@@ -30,7 +30,7 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="space-y-6 lg:col-span-1">
                         <Image
-                            src="/images/logo.png"
+                            src="/images/logo.jpeg"
                             alt="RKR Global Path HR & Manpower"
                             width={200}
                             height={60}

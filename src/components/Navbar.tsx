@@ -73,7 +73,7 @@ export default function Navbar() {
           <div className="flex items-center h-full py-3 gap-3 lg:gap-5">
             <Link href="/" className="flex flex-shrink-0 items-center justify-center">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.jpeg"
                 alt="RKR Global Path HR & Manpower"
                 width={130}
                 height={52}

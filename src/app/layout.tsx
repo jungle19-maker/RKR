@@ -74,7 +74,7 @@ const organizationSchema = {
   name: 'RKR Global Path HR & Manpower',
   alternateName: 'RKR Global Path',
   url: BASE_URL,
-  logo: `${BASE_URL}/images/logo.png`,
+  logo: `${BASE_URL}/images/logo.jpeg`,
   description:
     'MEA approved overseas manpower recruitment agency connecting skilled Indian professionals with international employers across Gulf, Middle East, Asia and Europe. Connecting Talent with Opportunity.',
   address: {
