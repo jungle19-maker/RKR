@@ -17,7 +17,7 @@ export default function Hero() {
             {/* ── HERO ── */}
             <section
                 id="home"
-                className="relative w-full min-h-[92vh] flex items-center justify-center overflow-hidden mt-[116px] sm:mt-[116px] lg:mt-[116px]"
+                className="relative w-full min-h-[92vh] flex items-center justify-center overflow-hidden mt-[128px] sm:mt-[128px] lg:mt-[140px]"
             >
                 {/* Background */}
                 <div
