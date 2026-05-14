@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#24342b] flex flex-col">
+    <main className="min-h-screen bg-[#F5F5F5] flex flex-col">
       <Navbar />
       <Hero />
       <About showCertificate={false} />

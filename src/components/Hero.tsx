@@ -1,15 +1,15 @@
 "use client";
 
-import { ArrowRight, Briefcase, ShieldCheck, Globe, CheckCircle } from "lucide-react";
+import { ArrowRight, Briefcase, ShieldCheck, Globe, CheckCircle, Users } from "lucide-react";
 import AnimatedHeading from "./AnimatedHeading";
 import AnimatedCounter from "./AnimatedCounter";
 
 const trustBadges = [
     { icon: <ShieldCheck className="w-4 h-4" />, text: "MEA Registered Partner" },
-    { icon: <CheckCircle className="w-4 h-4" />, text: "100% Compliant & Ethical Hiring" },
-    { icon: <Globe className="w-4 h-4" />, text: "International Deployment" },
+    { icon: <CheckCircle className="w-4 h-4" />, text: "100% Compliant & Ethical" },
+    { icon: <Globe className="w-4 h-4" />, text: "20+ Countries Served" },
+    { icon: <Users className="w-4 h-4" />, text: "10,000+ Placements" },
 ];
-
 
 export default function Hero() {
     return (
@@ -17,7 +17,7 @@ export default function Hero() {
             {/* ── HERO ── */}
             <section
                 id="home"
-                className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden mt-[115px] sm:mt-[120px] lg:mt-[128px]"
+                className="relative w-full min-h-[92vh] flex items-center justify-center overflow-hidden mt-[116px] sm:mt-[116px] lg:mt-[116px]"
             >
                 {/* Background */}
                 <div
@@ -25,55 +25,82 @@ export default function Hero() {
                     style={{ backgroundImage: "url('/images/hero_city_buildings.png')" }}
                 />
 
-                {/* Navy gradient overlay */}
+                {/* Deep Blue → Navy gradient overlay */}
                 <div className="absolute inset-0 hero-overlay" />
 
-                {/* Gold accent bar — left edge */}
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#22C55E] via-[#22C55E]/50 to-transparent" />
+                {/* Decorative animated globe SVG */}
+                <div className="absolute right-[-80px] top-1/2 -translate-y-1/2 opacity-10 pointer-events-none animate-float hidden lg:block">
+                    <svg width="550" height="550" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="95" stroke="#F28C28" strokeWidth="1.5" strokeDasharray="4 4"/>
+                        <circle cx="100" cy="100" r="70" stroke="#004A99" strokeWidth="1" strokeDasharray="6 3"/>
+                        <circle cx="100" cy="100" r="45" stroke="#D90429" strokeWidth="0.8" strokeDasharray="3 5"/>
+                        <line x1="100" y1="5" x2="100" y2="195" stroke="#ffffff" strokeWidth="0.5" opacity="0.4"/>
+                        <line x1="5" y1="100" x2="195" y2="100" stroke="#ffffff" strokeWidth="0.5" opacity="0.4"/>
+                        <ellipse cx="100" cy="100" rx="95" ry="40" stroke="#ffffff" strokeWidth="0.5" opacity="0.3"/>
+                        <ellipse cx="100" cy="100" rx="95" ry="70" stroke="#ffffff" strokeWidth="0.5" opacity="0.2"/>
+                        <ellipse cx="100" cy="100" rx="45" ry="95" stroke="#ffffff" strokeWidth="0.5" opacity="0.3"/>
+                    </svg>
+                </div>
+
+                {/* Left accent line */}
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#004A99] via-[#D90429] to-[#F28C28]" />
+
+                {/* Bottom gradient fade */}
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5F5F5] to-transparent z-10" />
 
                 {/* Content */}
                 <div className="relative z-10 text-center px-6 max-w-5xl mx-auto py-24">
 
                     {/* Eyebrow */}
-                    <div className="inline-flex items-center justify-center gap-2 mb-8 px-4 py-1.5 bg-[#22C55E]/10 rounded-full border border-[#22C55E]/20 animate-fade-in-up">
-                        <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-                        <span className="text-[#22C55E] text-xs font-bold tracking-[0.2em] uppercase">
-                            Ministry of External Affairs Approved · Licensed Partner
+                    <div className="inline-flex items-center justify-center gap-2 mb-8 px-5 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 animate-fade-in-up">
+                        <span className="w-2 h-2 rounded-full bg-[#F28C28] animate-pulse" />
+                        <span className="text-white text-xs font-bold tracking-[0.2em] uppercase">
+                            Ministry of External Affairs Approved · MEA Licensed
                         </span>
                     </div>
 
                     {/* Heading */}
                     <AnimatedHeading
                         element="h1"
-                        text="Premier Global [Workforce] & Executive Recruitment Solutions"
-                        className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tight"
-                        highlightClass="text-[#22C55E]"
+                        text="Your Trusted [Global] Recruitment Partner"
+                        className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-4 tracking-tight"
+                        highlightClass="text-[#F28C28]"
                     />
 
-
+                    <p className="text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200 leading-relaxed">
+                        <span className="text-[#F28C28] font-semibold">Connecting Talent with Opportunity</span> — 
+                        Empowering businesses worldwide with skilled manpower since 2014.
+                    </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-in-up delay-300">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14 animate-fade-in-up delay-300">
                         <a
-                            href="#aboutus"
-                            id="hero-hire-talent"
-                            className="btn-primary text-base px-8 py-4 rounded-full"
+                            href="/contact-info"
+                            id="hero-hire-workforce"
+                            className="btn-primary text-base px-8 py-4"
                         >
                             <Briefcase className="w-5 h-5" />
-                            Explore more
+                            Hire Skilled Workforce
                             <ArrowRight className="w-4 h-4" />
                         </a>
-
+                        <a
+                            href="/services"
+                            id="hero-apply-jobs"
+                            className="btn-secondary text-base px-8 py-4"
+                        >
+                            Apply for Overseas Jobs
+                            <ArrowRight className="w-4 h-4" />
+                        </a>
                     </div>
 
                     {/* Trust Badges */}
-                    <div className="flex flex-wrap items-center justify-center gap-4 animate-fade-in-up delay-400">
+                    <div className="flex flex-wrap items-center justify-center gap-3 animate-fade-in-up delay-400">
                         {trustBadges.map((badge, i) => (
                             <div
                                 key={i}
-                                className="flex items-center gap-2 px-5 py-2.5 glass rounded-full text-white text-sm font-semibold border border-white/10"
+                                className="flex items-center gap-2 px-4 py-2.5 glass rounded-full text-white text-sm font-semibold border border-white/15"
                             >
-                                <span className="text-[#22C55E]">{badge.icon}</span>
+                                <span className="text-[#F28C28]">{badge.icon}</span>
                                 {badge.text}
                             </div>
                         ))}
@@ -111,62 +138,63 @@ export default function Hero() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-5 h-5 md:w-6 md:h-6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
                     </a>
                 </div>
-
-
             </section>
 
-            {/* ── PREMIUM STATS BAR ── */}
-            <div id="stats" className="bg-[#0B1F3A] py-16 relative overflow-hidden">
-                {/* Subtle Background Pattern */}
+            {/* ── STATS BAR ── */}
+            <div id="stats" className="bg-[#004A99] py-14 relative overflow-hidden">
+                {/* Subtle grid pattern */}
                 <div
-                    className="absolute inset-0 z-0 opacity-[0.03]"
+                    className="absolute inset-0 z-0 opacity-[0.04]"
                     style={{
                         backgroundImage: 'radial-gradient(#ffffff 2px, transparent 2px)',
-                        backgroundSize: '30px 30px'
+                        backgroundSize: '32px 32px'
                     }}
                 />
+                {/* Red accent line top */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D90429] via-[#F28C28] to-[#D90429]" />
 
                 <div className="container mx-auto px-6 max-w-6xl relative z-10">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                        {/* Card 1 */}
-                        <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 flex flex-col items-center justify-center text-center group hover:bg-white/15 transition-all duration-500 shadow-xl hover:-translate-y-2">
-                            <div className="text-3xl md:text-4xl font-extrabold text-[#22C55E] mb-3">
-                                <AnimatedCounter end={500} suffix="+" />
+                    <p className="text-center text-white/50 text-xs font-bold tracking-[0.3em] uppercase mb-8">
+                        Building Careers Worldwide
+                    </p>
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
+                        {[
+                            { end: 500, suffix: "+", label: "Global Clients" },
+                            { end: 10000, suffix: "+", label: "Placements Made" },
+                            { end: 20, suffix: "+", label: "Countries Served" },
+                            { end: 15, suffix: "+", label: "Industries Covered" },
+                        ].map((stat, i) => (
+                            <div
+                                key={i}
+                                className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:bg-white/20 transition-all duration-500 shadow-xl hover:-translate-y-2 group"
+                            >
+                                <div className="text-3xl md:text-4xl font-extrabold text-[#F28C28] mb-2 group-hover:scale-110 transition-transform">
+                                    <AnimatedCounter end={stat.end} suffix={stat.suffix} />
+                                </div>
+                                <div className="text-xs font-bold text-white/80 tracking-widest uppercase">
+                                    {stat.label}
+                                </div>
                             </div>
-                            <div className="text-sm font-semibold text-white tracking-widest uppercase">
-                                Global Clients
-                            </div>
-                        </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
 
-                        {/* Card 2 */}
-                        <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 flex flex-col items-center justify-center text-center group hover:bg-white/15 transition-all duration-500 shadow-xl hover:-translate-y-2">
-                            <div className=" text-3xl md:text-4xl font-extrabold text-[#22C55E] mb-3">
-                                <AnimatedCounter end={10000} suffix="+" />
-                            </div>
-                            <div className="text-sm font-semibold text-white tracking-widest uppercase">
-                                Placements Made
-                            </div>
-                        </div>
-
-                        {/* Card 3 */}
-                        <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 flex flex-col items-center justify-center text-center group hover:bg-white/15 transition-all duration-500 shadow-xl hover:-translate-y-2">
-                            <div className=" text-3xl md:text-4xl font-extrabold text-[#22C55E] mb-3">
-                                <AnimatedCounter end={20} suffix="+" />
-                            </div>
-                            <div className="text-sm font-semibold text-white tracking-widest uppercase">
-                                Countries Served
-                            </div>
-                        </div>
-
-                        {/* Card 4 */}
-                        <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 flex flex-col items-center justify-center text-center group hover:bg-white/15 transition-all duration-500 shadow-xl hover:-translate-y-2">
-                            <div className=" text-3xl md:text-4xl font-extrabold text-[#22C55E] mb-3">
-                                <AnimatedCounter end={15} suffix="+" />
-                            </div>
-                            <div className="text-sm font-semibold text-white tracking-widest uppercase">
-                                Industries Covered
-                            </div>
-                        </div>
+            {/* ── BRAND SLOGANS BANNER ── */}
+            <div className="bg-white border-y border-[#DDDDDD] py-5 overflow-hidden">
+                <div className="flex items-center gap-12 whitespace-nowrap animate-none">
+                    <div className="flex gap-12 items-center text-sm font-bold text-[#555555] flex-wrap justify-center px-6 w-full">
+                        {[
+                            "🌍 Connecting Talent with Opportunity",
+                            "🤝 Your Trusted Global Recruitment Partner",
+                            "🚀 Building Careers Worldwide",
+                            "💼 Empowering Businesses with Skilled Talent",
+                        ].map((slogan, i) => (
+                            <span key={i} className="flex items-center gap-2">
+                                <span className="text-[#004A99]">{slogan}</span>
+                                {i < 3 && <span className="text-[#D90429] font-black">·</span>}
+                            </span>
+                        ))}
                     </div>
                 </div>
             </div>

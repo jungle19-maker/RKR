@@ -59,14 +59,14 @@ export default function Services() {
                 "serviceType": svc.category,
                 "provider": {
                     "@type": "Organization",
-                    "name": "New RKR Manpower Consultant"
+                    "name": "RKR Global Path HR & Manpower"
                 }
             }
         }))
     };
 
     return (
-        <section id="services" className="py-24 bg-[#ecececfc]">
+        <section id="services" className="py-24 bg-[#EAEAEA]">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
@@ -75,17 +75,17 @@ export default function Services() {
 
                 {/* Header */}
                 <div className="text-center max-w-4xl mx-auto mb-20 flex flex-col items-center">
-                    <div className="inline-flex items-center justify-center gap-2 mb-6 px-4 py-1.5 bg-[#22C55E]/10 rounded-full border border-[#22C55E]/20">
-                        <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-                        <span className="text-xs font-bold text-[#16a34a] tracking-widest uppercase">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#004A99]/08 rounded-full border border-[#004A99]/20 mb-6">
+                        <span className="w-2 h-2 rounded-full bg-[#D90429] animate-pulse" />
+                        <span className="text-xs font-bold text-[#004A99] tracking-widest uppercase">
                             Our Expertise
                         </span>
                     </div>
                     <AnimatedHeading
                         text="Specialized Workforce Solutions Across Strategic Global Sectors"
-                        className="text-4xl md:text-5xl font-extrabold text-[#23352b] leading-tight mb-6 tracking-tight"
+                        className="text-4xl md:text-5xl font-extrabold text-[#333333] leading-tight mb-6 tracking-tight"
                     />
-                    <p className="text-[#4B5563] text-lg max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-[#555555] text-lg max-w-3xl mx-auto leading-relaxed">
                         We source, vet, and deploy world-class talent, empowering international enterprises with compliant, job-ready professionals equipped to drive business success.
                     </p>
                 </div>
@@ -95,7 +95,7 @@ export default function Services() {
                     {services.map((svc, i) => (
                         <div
                             key={i}
-                            className="group relative h-[420px] md:h-[480px] overflow-hidden rounded-3xl shadow-lg border border-white/10 bg-[#0B1F3A] cursor-pointer flex flex-col justify-end transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 lg:last:col-span-1"
+                            className="group relative h-[420px] md:h-[480px] overflow-hidden rounded-3xl shadow-lg border border-[#004A99]/10 bg-[#001f4d] cursor-pointer flex flex-col justify-end transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 lg:last:col-span-1"
                         >
                             {/* Background Image */}
                             <Image
@@ -106,21 +106,21 @@ export default function Services() {
                             />
 
                             {/* Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#061428] via-[#061428]/80 to-transparent z-10 transition-opacity duration-500" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#001f4d] via-[#001f4d]/80 to-transparent z-10 transition-opacity duration-500" />
 
                             {/* Content */}
                             <div className="relative z-20 p-8 flex flex-col h-full justify-end">
-                                <span className="inline-block py-1.5 px-4 mb-5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full text-[10px] font-bold uppercase tracking-widest w-fit transform transition-transform duration-500 group-hover:-translate-y-1">
+                                <span className="inline-block py-1.5 px-4 mb-5 bg-[#D90429]/90 text-white border border-[#D90429]/20 rounded-full text-[10px] font-bold uppercase tracking-widest w-fit transform transition-transform duration-500 group-hover:-translate-y-1 shadow-md">
                                     {svc.category}
                                 </span>
 
-                                <h3 className="text-2xl font-bold text-white mb-3 leading-snug group-hover:text-[#22C55E] transition-colors duration-300">
+                                <h3 className="text-2xl font-bold text-white mb-3 leading-snug group-hover:text-[#F28C28] transition-colors duration-300">
                                     {svc.title}
                                 </h3>
 
                                 {/* Description */}
                                 <div className="h-0 overflow-hidden opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 ease-in-out">
-                                    <p className="text-white/70 text-sm leading-relaxed mb-6 font-medium">
+                                    <p className="text-white/80 text-sm leading-relaxed mb-6 font-medium">
                                         {svc.desc}
                                     </p>
                                 </div>
@@ -128,7 +128,7 @@ export default function Services() {
                                 {/* CTA Link */}
                                 <a
                                     href="/contact-info"
-                                    className="flex items-center gap-2 text-white font-semibold text-sm uppercase tracking-wide group-hover:text-[#22C55E] transition-colors mt-2"
+                                    className="flex items-center gap-2 text-white font-bold text-sm uppercase tracking-wide group-hover:text-[#F28C28] transition-colors mt-2"
                                 >
                                     {svc.cta}
                                     <ArrowRight className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-2" />

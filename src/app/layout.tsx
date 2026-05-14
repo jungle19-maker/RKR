@@ -15,48 +15,50 @@ const outfit = Outfit({
   display: 'swap',
 });
 
-const BASE_URL = 'https://www.newrkrmanpower.com';
+const BASE_URL = 'https://www.rkrglobalpath.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'New RKR Manpower Consultant | MEA Approved Global Manpower Recruitment',
-    template: '%s | New RKR Manpower Consultant',
+    default: 'RKR Global Path HR & Manpower | Trusted Global Recruitment Partner',
+    template: '%s | RKR Global Path HR & Manpower',
   },
   description:
-    'New RKR Manpower Consultant is an MEA-approved, Government of India licensed overseas manpower recruitment agency. We connect skilled Indian professionals with trusted international employers across Gulf, Middle East, Asia & Europe.',
+    'RKR Global Path HR & Manpower is an MEA-approved, Government of India licensed overseas manpower recruitment agency. Connecting skilled Indian professionals with trusted international employers across Gulf, Middle East, Asia & Europe.',
   keywords: [
+    'RKR Global Path',
     'overseas recruitment India',
     'manpower agency India',
     'MEA approved recruitment',
     'overseas jobs India',
     'gulf recruitment agency',
     'international manpower consultancy',
-    'New RKR Manpower Consultant',
+    'HR manpower solutions',
     'overseas staffing India',
+    'global workforce recruitment',
   ],
   openGraph: {
     type: 'website',
     locale: 'en_IN',
     url: BASE_URL,
-    siteName: 'New RKR Manpower Consultant',
-    title: 'New RKR Manpower Consultant | MEA Approved Global Manpower Recruitment',
+    siteName: 'RKR Global Path HR & Manpower',
+    title: 'RKR Global Path HR & Manpower | Trusted Global Recruitment Partner',
     description:
-      'Connecting skilled Indian talent with trusted international employers. MEA Registered | 100% Legal Recruitment | Global Placements.',
+      'Connecting Talent with Opportunity. MEA Registered | 100% Legal Recruitment | Global Placements.',
     images: [
       {
         url: '/images/hero_city_buildings.png',
         width: 1200,
         height: 630,
-        alt: 'New RKR Manpower Consultant — Global Recruitment',
+        alt: 'RKR Global Path HR & Manpower — Global Recruitment',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'New RKR Manpower Consultant | Global Manpower Recruitment',
+    title: 'RKR Global Path HR & Manpower | Global Recruitment Partner',
     description:
-      'MEA approved overseas recruitment agency. Connecting skilled Indian professionals with global employers.',
+      'MEA approved overseas recruitment agency. Connecting Talent with Opportunity worldwide.',
     images: ['/images/hero_city_buildings.png'],
   },
   robots: {
@@ -69,12 +71,12 @@ export const metadata: Metadata = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'New RKR Manpower Consultant',
-  alternateName: 'New RKR',
+  name: 'RKR Global Path HR & Manpower',
+  alternateName: 'RKR Global Path',
   url: BASE_URL,
   logo: `${BASE_URL}/images/logo.png`,
   description:
-    'MEA approved overseas manpower recruitment agency connecting skilled Indian professionals with international employers across Gulf, Middle East, Asia and Europe.',
+    'MEA approved overseas manpower recruitment agency connecting skilled Indian professionals with international employers across Gulf, Middle East, Asia and Europe. Connecting Talent with Opportunity.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Deoria Sadar R.S Deoria',
@@ -86,17 +88,17 @@ const organizationSchema = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      telephone: '+91-9112345678',
+      telephone: '+91-91123456789',
       contactType: 'customer service',
       availableLanguage: ['Hindi', 'English'],
     },
   ],
-  email: 'newRKRmanpowerconsultant@gmail.com',
+  email: 'newrkrmanpowerconsultant@gmail.com',
   foundingDate: '2014',
   numberOfEmployees: '10-50',
   sameAs: [
-    'https://www.facebook.com/newrkrmanpower',
-    'https://www.linkedin.com/company/newrkrmanpower',
+    'https://www.facebook.com/rkrglobalpath',
+    'https://www.linkedin.com/company/rkrglobalpath',
   ],
 };
 
@@ -111,7 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body
         suppressHydrationWarning
-        className={`${plusJakarta.variable} ${outfit.variable} font-sans antialiased bg-[#F8FAFC] text-slate-800`}
+        className={`${plusJakarta.variable} ${outfit.variable} font-sans antialiased bg-[#F5F5F5] text-[#333333]`}
       >
         {children}
       </body>

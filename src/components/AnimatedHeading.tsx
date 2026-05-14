@@ -14,7 +14,7 @@ interface AnimatedHeadingProps {
 export default function AnimatedHeading({
   text,
   className = "",
-  highlightClass = "text-[#22C55E]",
+  highlightClass = "text-[#D90429]",
   element: Element = "h2",
 }: AnimatedHeadingProps) {
   const tokens: { word: string; isHighlight: boolean; isBreak: boolean }[] = [];

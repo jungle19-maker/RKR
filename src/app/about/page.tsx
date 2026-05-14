@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-[#24342b] flex flex-col pt-24">
+        <main className="min-h-screen bg-[#F5F5F5] flex flex-col pt-24">
             <Navbar />
             <div className="flex-grow">
                 {/* Hero Banner for About Page */}
@@ -29,7 +29,7 @@ export default function AboutPage() {
                         }}
                     />
                     <div className="container mx-auto px-6 max-w-4xl relative z-10">
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-[#24342b] mb-4">About <span className="text-[#22C55E]">New RKR Manpower Consultant</span></h1>
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-[#333333] mb-4">About <span className="text-[#004A99]">RKR Global Path</span></h1>
                     </div>
                 </section>
 
@@ -38,13 +38,13 @@ export default function AboutPage() {
 
                 <section className="bg-white py-16">
                     <div className="container mx-auto px-6 max-w-5xl text-center">
-                        <h2 className="text-3xl font-bold text-[#24342b] mb-8">Our Mission & Vision</h2>
+                        <h2 className="text-3xl font-bold text-[#333333] mb-8">Our Mission & Vision</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div className="p-8 bg-[#F1F5F9] border border-[#E5E7EB]">
-                                <h3 className="text-xl font-bold text-[#24342b] mb-4">Our Mission</h3>
+                                <h3 className="text-xl font-bold text-[#333333] mb-4">Our Mission</h3>
                                 <p className="text-[#4B5563] leading-relaxed">To deliver compliant, ethical, and high-speed recruitment that matches the right candidate with the right culture, while reducing time-to-hire and cost-per-hire for our global partners.</p> </div>
                             <div className="p-8 bg-[#F1F5F9] border border-[#E5E7EB]">
-                                <h3 className="text-xl font-bold text-[#24342b] mb-4">Our Vision</h3>
+                                <h3 className="text-xl font-bold text-[#333333] mb-4">Our Vision</h3>
                                 <p className="text-[#4B5563] leading-relaxed">To be the most trusted and preferred overseas recruitment partner globally, recognized for our unwavering commitment to quality, compliance, and excellence in human resource management.</p>
                             </div>
                         </div>

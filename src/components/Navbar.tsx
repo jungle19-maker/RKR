@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, Mail, Phone } from "lucide-react";
+import { Menu, X, Mail, Phone, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -31,65 +31,70 @@ export default function Navbar() {
     <header className="fixed top-0 w-full z-50">
 
       {/* ── Top Info Bar ── */}
-      <div className="bg-black text-white text-[12px] md:text-sm px-4 md:px-8 py-2 md:py-2.5 flex flex-col md:flex-row items-center justify-between gap-1.5 md:gap-0 font-medium">
+      <div className="bg-[#004A99] text-white text-[12px] md:text-sm px-4 md:px-8 py-2 md:py-2.5 flex flex-col md:flex-row items-center justify-between gap-1.5 md:gap-0 font-medium">
         <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 text-center">
           <a
-            href="mailto:newRKRmanpowerconsultant@gmail.com"
-            className="flex items-center gap-1.5 text-white/90 hover:text-[#22C55E] transition-colors"
+            href="mailto:newrkrmanpowerconsultant@gmail.com"
+            className="flex items-center gap-1.5 text-white/90 hover:text-[#F28C28] transition-colors"
           >
-            <Mail className="w-3.5 h-3.5 text-[#22C55E]" />
-            newRKRmanpowerconsultant@gmail.com
+            <Mail className="w-3.5 h-3.5 text-[#F28C28]" />
+            newrkrmanpowerconsultant@gmail.com
           </a>
           <a
             href="tel:+91123456789"
-            className="flex items-center gap-1.5 text-white/90 hover:text-[#22C55E] transition-colors"
+            className="flex items-center gap-1.5 text-white/90 hover:text-[#F28C28] transition-colors"
           >
-            <Phone className="w-3.5 h-3.5 text-[#22C55E]" />
+            <Phone className="w-3.5 h-3.5 text-[#F28C28]" />
             +91-91123456789
           </a>
+          <span className="hidden md:flex items-center gap-1.5 text-white/70">
+            <Globe className="w-3.5 h-3.5 text-[#F28C28]" />
+            Connecting Talent with Opportunity
+          </span>
         </div>
         <div className="flex flex-col items-center md:items-end md:text-right gap-0 text-center">
-          <span className="font-bold tracking-wide text-white text-[13px] md:text-[15px]">
-            NEW RKR MANPOWER CONSULTANT PRIVATE LIMITED
+          <span className="font-black tracking-wide text-white text-[13px] md:text-[15px]">
+            RKR GLOBAL PATH HR & MANPOWER
           </span>
-          <span className="text-white/80 text-[10px] md:text-[11px] font-semibold tracking-wide">
-            B-3395/UP/COM/
+          <span className="text-[#F28C28] text-[10px] md:text-[11px] font-semibold tracking-wide">
+            License: B-3395/UP/COM/ · MEA Approved
           </span>
         </div>
       </div>
 
       {/* ── Main Navbar ── */}
       <nav
-        className={`bg-white transition-all duration-300 border-b border-[#E5E7EB] ${scrolled ? "shadow-md" : ""}`}
+        className={`bg-white transition-all duration-300 border-b-2 border-[#004A99]/10 ${scrolled ? "shadow-lg shadow-[#004A99]/10" : ""
+          }`}
       >
-        <div className="container mx-auto px-4 lg:px-8 max-w-[100rem] flex items-center justify-between h-[85px]">
+        <div className="container mx-auto px-4 lg:px-8 max-w-[100rem] flex items-center justify-between h-[80px]">
 
-          {/* Left: Logos */}
-          <div className="flex items-center h-full py-4 gap-2 lg:gap-4">
-            <Link href="/" className="flex flex-shrink-0 items-center justify-center border border-gray-200">
+          {/* Left: Logo */}
+          <div className="flex items-center h-full py-3 gap-3 lg:gap-5">
+            <Link href="/" className="flex flex-shrink-0 items-center justify-center">
               <Image
                 src="/images/logo.png"
-                alt="amc"
-                width={100}
-                height={44}
-                className="object-contain h-12 w-auto"
+                alt="RKR Global Path HR & Manpower"
+                width={130}
+                height={52}
+                className="object-contain h-14 w-auto"
                 priority
               />
             </Link>
-            {/* <div className="w-[1px] h-8 sm:h-10 bg-gray-200 mx-1" /> */}
-            <div className="flex items-center flex-shrink-0 gap-1 sm:gap-2">
+            <div className="w-[1px] h-10 bg-gray-200 hidden sm:block" />
+            <div className="hidden sm:flex items-center flex-shrink-0 gap-2">
               <Image
                 src="/images/mea_logo.png"
                 alt="Ministry of External Affairs"
                 width={40}
                 height={40}
-                className="object-contain h-8 sm:h-10 w-auto flex-shrink-0"
+                className="object-contain h-9 w-auto flex-shrink-0"
               />
               <div className="flex flex-col">
-                <span className="text-[#1e3a8a] font-black text-[9px] sm:text-[14px] leading-tight break-words max-w-[100px] sm:max-w-none">
+                <span className="text-[#004A99] font-black text-[11px] sm:text-[13px] leading-tight">
                   Ministry of External Affairs
                 </span>
-                <span className="text-[#4B5563] text-[8px] sm:text-[12px] leading-tight">
+                <span className="text-[#555555] text-[9px] sm:text-[11px] leading-tight">
                   Government of India
                 </span>
               </div>
@@ -97,16 +102,16 @@ export default function Navbar() {
           </div>
 
           {/* Center: Desktop Links */}
-          <div className="hidden xl:flex items-center justify-center flex-1 gap-6 px-4">
+          <div className="hidden xl:flex items-center justify-center flex-1 gap-1 px-4">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`text-[15px] font-bold transition-colors whitespace-nowrap ${isActive
-                    ? "text-[#22C55E] border-b-2 border-[#22C55E] pb-1"
-                    : "text-[#374151] hover:text-[#24342b] pb-1 border-b-2 border-transparent"
+                  className={`text-[14px] font-bold px-3 py-1.5 transition-all whitespace-nowrap rounded-full ${isActive
+                      ? "text-white bg-[#004A99]"
+                      : "text-[#333333] hover:text-[#004A99] hover:bg-[#004A99]/08"
                     }`}
                 >
                   {link.name}
@@ -115,15 +120,21 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Right: Language Dropdown */}
-          <div className="flex items-center gap-4">
+          {/* Right: CTA + Language */}
+          <div className="flex items-center gap-3">
+            <a
+              href="/contact-info"
+              className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#004A99] to-[#D90429] text-white font-bold text-sm hover:shadow-lg hover:shadow-[#D90429]/30 hover:-translate-y-0.5 transition-all"
+            >
+              Hire Talent
+            </a>
             <div className="hidden lg:block">
               <LanguageSwitcher />
             </div>
 
             {/* Mobile Toggle */}
             <button
-              className="xl:hidden p-2 text-[#374151] hover:text-[#24342b] transition-colors"
+              className="xl:hidden p-2 text-[#004A99] hover:text-[#D90429] transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -134,16 +145,16 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="xl:hidden bg-white border-t border-[#E5E7EB] px-6 py-5 flex flex-col gap-4 shadow-lg">
+          <div className="xl:hidden bg-white border-t border-[#DDDDDD] px-6 py-5 flex flex-col gap-3 shadow-xl">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`text-base font-bold py-1 transition-colors ${isActive
-                    ? "text-[#22C55E] pl-2 border-l-4 border-[#22C55E]"
-                    : "text-[#374151] hover:text-[#24342b] pl-2 border-l-4 border-transparent"
+                  className={`text-base font-bold py-2 px-4 rounded-xl transition-colors ${isActive
+                      ? "text-white bg-[#004A99]"
+                      : "text-[#333333] hover:text-[#004A99] hover:bg-[#004A99]/08"
                     }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -151,7 +162,13 @@ export default function Navbar() {
                 </a>
               );
             })}
-
+            <a
+              href="/contact-info"
+              className="mt-2 text-center py-3 rounded-full bg-gradient-to-r from-[#004A99] to-[#D90429] text-white font-bold text-sm"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Hire Talent
+            </a>
           </div>
         )}
       </nav>

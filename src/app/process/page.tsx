@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ProcessPage() {
   return (
-    <main className="min-h-screen bg-[#24342b] flex flex-col pt-24">
+    <main className="min-h-screen bg-[#F5F5F5] flex flex-col pt-24">
       <Navbar />
       <div className="flex-grow">
         {/* Hero Banner for Process Page */}
@@ -29,7 +29,7 @@ export default function ProcessPage() {
             }}
           />
           <div className="container mx-auto px-6 max-w-4xl relative z-10">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[#24342b] mb-4">Our <span className="text-[#22C55E]">Process</span></h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-[#333333] mb-4">Our <span className="text-[#004A99]">Process</span></h1>
           </div>
         </section>
 

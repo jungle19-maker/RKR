@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Brand Colors ── */
-  --color-navy: #23352b;
-  --color-navy-d: #061428;
-  --color-navy-mid: #0D2847;
-  --color-gold: #22C55E;
-  --color-gold-h: #16a34a;
+  /* ── RKR Brand Colors ── */
+  --color-brand-blue: #004A99;
+  --color-brand-blue-d: #003070;
+  --color-brand-blue-light: #0060C7;
+  --color-brand-red: #D90429;
+  --color-brand-red-d: #b8021f;
+  --color-brand-orange: #F28C28;
+  --color-brand-orange-d: #D97A1A;
 
   /* ── Neutrals ── */
-  --color-bg-main: #F8FAFC;
-  --color-bg-alt: #F1F5F9;
-  --color-text-dark: #111827;
-  --color-text-mid: #4B5563;
-  --color-border: #E5E7EB;
+  --color-bg-main: #F5F5F5;
+  --color-bg-alt: #EAEAEA;
+  --color-bg-dark: #001f4d;
+  --color-text-dark: #333333;
+  --color-text-mid: #555555;
+  --color-border: #DDDDDD;
 
   /* ── Fonts ── */
   --font-sans: var(--font-sans);
@@ -22,8 +25,8 @@
 
 @layer base {
   body {
-    background-color: #F8FAFC;
-    color: #111827;
+    background-color: #F5F5F5;
+    color: #333333;
     font-family: var(--font-sans), sans-serif;
     -webkit-font-smoothing: antialiased;
   }
@@ -36,16 +39,16 @@
   h6 {
     font-family: var(--font-heading), sans-serif;
     font-weight: 700;
-    color: #23352b;
+    color: #004A99;
   }
 
   a {
-    color: #23352b;
+    color: #004A99;
     transition: color 0.2s;
   }
 
   a:hover {
-    color: #22C55E;
+    color: #D90429;
   }
 }
 
@@ -92,12 +95,27 @@
 
     0%,
     100% {
-      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+      box-shadow: 0 0 0 0 rgba(0, 74, 153, 0.4);
     }
 
     50% {
-      box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
+      box-shadow: 0 0 0 12px rgba(0, 74, 153, 0);
     }
+  }
+
+  @keyframes globe-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-12px); }
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
   }
 
   .animate-fade-in-up {
@@ -119,71 +137,45 @@
     animation: pulse-glow 2s infinite;
   }
 
-  .delay-100 {
-    animation-delay: 100ms;
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
   }
 
-  .delay-200 {
-    animation-delay: 200ms;
-  }
-
-  .delay-300 {
-    animation-delay: 300ms;
-  }
-
-  .delay-400 {
-    animation-delay: 400ms;
-  }
-
-  .delay-500 {
-    animation-delay: 500ms;
-  }
-
-  /* ── Section Eyebrow ── */
-  .eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .eyebrow::before {
-    content: '';
-    display: block;
-    width: 2rem;
-    height: 2px;
-    background: #22C55E;
-
-    flex-shrink: 0;
-  }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
 
   /* ── Hero Overlay ── */
   .hero-overlay {
     background: linear-gradient(135deg,
-        rgba(6, 20, 40, 0.92) 0%,
-        rgba(11, 31, 58, 0.80) 60%,
-        rgba(11, 31, 58, 0.55) 100%);
+        rgba(0, 30, 80, 0.93) 0%,
+        rgba(0, 50, 120, 0.78) 55%,
+        rgba(0, 40, 100, 0.50) 100%);
   }
 
-  /* ── Primary Button ── */
+  /* ── Primary Button (Blue → Red gradient) ── */
   .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.875rem 2rem;
-    background: #22C55E;
-    color: #23352b;
+    background: linear-gradient(135deg, #004A99 0%, #D90429 100%);
+    color: #ffffff;
     font-weight: 700;
     font-size: 0.875rem;
-
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    border-radius: 9999px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
     letter-spacing: 0.02em;
+    border: none;
   }
 
   .btn-primary:hover {
-    background: #16a34a;
+    background: linear-gradient(135deg, #003070 0%, #b8021f 100%);
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.40);
+    box-shadow: 0 10px 28px rgba(217, 4, 41, 0.35);
   }
 
   /* ── Secondary Button (on dark bg) ── */
@@ -192,18 +184,18 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.875rem 2rem;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     color: #ffffff;
     font-weight: 700;
     font-size: 0.875rem;
-
+    border-radius: 9999px;
     transition: background 0.2s, transform 0.2s, border-color 0.2s;
     letter-spacing: 0.02em;
   }
 
   .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.9);
     color: #ffffff;
     transform: translateY(-2px);
   }
@@ -214,41 +206,41 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.75rem;
-    border: 2px solid #23352b;
-    color: #23352b;
+    border: 2px solid #004A99;
+    color: #004A99;
     font-weight: 700;
     font-size: 0.875rem;
-
+    border-radius: 9999px;
     transition: background 0.2s, color 0.2s;
     letter-spacing: 0.02em;
   }
 
   .btn-secondary-dark:hover {
-    background: #23352b;
+    background: #004A99;
     color: #ffffff;
   }
 
-  /* ── Gold Outline Button ── */
-  .btn-gold-outline {
+  /* ── Red Outline Button ── */
+  .btn-red-outline {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.75rem;
-    border: 2px solid #22C55E;
-    color: #22C55E;
+    border: 2px solid #D90429;
+    color: #D90429;
     font-weight: 700;
     font-size: 0.875rem;
-
+    border-radius: 9999px;
     transition: background 0.2s, color 0.2s;
     letter-spacing: 0.02em;
   }
 
-  .btn-gold-outline:hover {
-    background: #22C55E;
-    color: #23352b;
+  .btn-red-outline:hover {
+    background: #D90429;
+    color: #ffffff;
   }
 
-  /* ── Section Divider ── */
+  /* ── Section Eyebrow ── */
   .section-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -257,8 +249,7 @@
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #23352b;
-    opacity: 0.5;
+    color: #004A99;
   }
 
   .section-eyebrow::before,
@@ -267,8 +258,7 @@
     display: block;
     width: 2rem;
     height: 2px;
-    background: #22C55E;
-
+    background: linear-gradient(90deg, #004A99, #D90429);
     flex-shrink: 0;
   }
 
@@ -279,7 +269,7 @@
 
   .card-hover:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(11, 31, 58, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 74, 153, 0.15);
   }
 
   /* ── Glassmorphism ── */
@@ -290,9 +280,52 @@
   }
 
   .glass-navy {
-    background: rgba(11, 31, 58, 0.85);
+    background: rgba(0, 26, 77, 0.85);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* ── Brand Gradient Text ── */
+  .text-gradient {
+    background: linear-gradient(135deg, #004A99 0%, #D90429 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Brand Gradient Background ── */
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, #004A99 0%, #003070 60%, #D90429 100%);
+  }
+
+  /* ── Eyebrow Pill (reusable) ── */
+  .eyebrow-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 1rem;
+    background: rgba(0, 74, 153, 0.08);
+    border: 1px solid rgba(0, 74, 153, 0.2);
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #004A99;
+  }
+
+  .eyebrow-pill .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D90429;
+    animation: pulse 2s infinite;
+  }
+
+  /* ── Animated Border Accent ── */
+  .border-brand-left {
+    border-left: 4px solid;
+    border-image: linear-gradient(180deg, #004A99, #D90429) 1;
   }
 }
 
@@ -310,7 +343,6 @@ body {
   position: static !important;
 }
 
-/* Adjust the fixed header when Google Translate is active to prevent overlap */
 html.translated-ltr header.fixed,
 html.translated-rtl header.fixed {
   top: 40px !important;
@@ -330,28 +362,27 @@ html.translated-rtl header.fixed {
   box-shadow: none !important;
 }
 
-/* ── Premium Customization for Native Google Translate Dropdown ── */
 .goog-te-gadget {
   font-size: 0px !important;
   color: transparent !important;
 }
 
-.goog-te-gadget .goog-logo-link, 
+.goog-te-gadget .goog-logo-link,
 .goog-te-gadget img {
   display: none !important;
 }
 
 select.goog-te-combo {
-  background-color: #F8FAFC !important;
-  border: 1px solid #E5E7EB !important;
-  color: #0B1F3A !important;
+  background-color: #F5F5F5 !important;
+  border: 1px solid #DDDDDD !important;
+  color: #004A99 !important;
   padding: 6px 0px 6px 12px !important;
   font-size: 13px !important;
   font-weight: 600 !important;
   outline: none !important;
   cursor: pointer !important;
   appearance: none !important;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B1F3A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23004A99' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
   background-repeat: no-repeat !important;
   background-position: right 8px center !important;
   background-size: 16px !important;
@@ -359,5 +390,5 @@ select.goog-te-combo {
 }
 
 select.goog-te-combo:hover {
-  border-color: #22C55E !important;
+  border-color: #D90429 !important;
 }

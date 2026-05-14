@@ -35,22 +35,22 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 bg-[#ecececfc] overflow-hidden">
+    <section id="process" className="py-24 bg-[#F5F5F5] overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 flex flex-col items-center">
-          <div className="inline-flex items-center justify-center gap-2 mb-6 px-4 py-1.5 bg-[#22C55E]/10 rounded-full border border-[#22C55E]/20">
-            <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-            <span className="text-xs font-bold text-[#16a34a] tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#004A99]/08 rounded-full border border-[#004A99]/20 mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#D90429] animate-pulse" />
+            <span className="text-xs font-bold text-[#004A99] tracking-widest uppercase">
               How It Works
             </span>
           </div>
           <AnimatedHeading 
             text="Our Executive 6-Step Recruitment Methodology"
-            className="text-4xl md:text-5xl font-extrabold text-[#23352b] leading-tight mb-4 tracking-tight"
+            className="text-4xl md:text-5xl font-extrabold text-[#333333] leading-tight mb-4 tracking-tight"
           />
-          <p className="text-[#4B5563] text-lg leading-relaxed">
+          <p className="text-[#555555] text-lg leading-relaxed">
             A proven, precision-driven timeline designed to deploy exceptional talent efficiently and securely—empowering your global operations every single time.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function Process() {
         <div className="relative w-full py-4">
 
           {/* Center Vertical Line */}
-          <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-[2px] bg-[#E5E7EB] md:-translate-x-[1px]" />
+          <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-[2px] bg-[#DDDDDD] md:-translate-x-[1px]" />
 
           <div className="flex flex-col gap-12 md:gap-16">
             {steps.map((step, idx) => {
@@ -71,23 +71,23 @@ export default function Process() {
                 <div key={idx} className="relative w-full">
 
                   {/* Floating Number Box (Timeline Marker) */}
-                  <div className="absolute left-[28px] md:left-1/2 top-4 md:top-1/2 transform -translate-x-1/2 md:-translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full border border-[#E5E7EB] shadow-sm flex items-center justify-center transition-transform hover:scale-110 hover:border-[#22C55E] duration-300">
-                    <span className="text-[#23352b] font-bold text-lg">{step.num}</span>
+                  <div className="absolute left-[28px] md:left-1/2 top-4 md:top-1/2 transform -translate-x-1/2 md:-translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full border-2 border-[#D90429] shadow-md flex items-center justify-center transition-transform hover:scale-110 hover:border-[#004A99] hover:bg-[#004A99] hover:text-white duration-300 text-[#004A99]">
+                    <span className="font-bold text-lg">{step.num}</span>
                   </div>
 
                   {/* Content Container */}
                   <div className={`w-full md:w-[45%] pl-20 md:pl-0 ${boxMargin}`}>
-                    <div className="bg-white rounded-3xl border border-[#E5E7EB] p-8 hover:bg-[#0B1F3A] group transition-all duration-500 shadow-sm hover:shadow-2xl hover:border-[#22C55E]/50 hover:-translate-y-2">
+                    <div className="bg-white rounded-3xl border border-[#DDDDDD] p-8 hover:bg-[#004A99] group transition-all duration-500 shadow-sm hover:shadow-2xl hover:border-[#004A99] hover:-translate-y-2">
 
                       {/* Step Number Backdrop (Visible on Hover) */}
-                      <div className="text-6xl font-extrabold text-[#23352b]/5 group-hover:text-white/5 absolute top-2 right-4 leading-none select-none transition-colors duration-300 pointer-events-none">
+                      <div className="text-6xl font-extrabold text-[#F5F5F5] group-hover:text-white/10 absolute top-2 right-4 leading-none select-none transition-colors duration-300 pointer-events-none">
                         {step.num}
                       </div>
 
-                      <h4 className={`text-xl font-bold text-[#0B1F3A] group-hover:text-[#22C55E] mb-3 transition-colors duration-300 text-left ${textAlign}`}>
+                      <h4 className={`text-xl font-bold text-[#004A99] group-hover:text-[#F28C28] mb-3 transition-colors duration-300 text-left ${textAlign}`}>
                         {step.title}
                       </h4>
-                      <p className={`text-[#4B5563] text-sm leading-relaxed group-hover:text-white/80 transition-colors duration-300 text-left ${textAlign}`}>
+                      <p className={`text-[#555555] text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300 text-left ${textAlign}`}>
                         {step.desc}
                       </p>
                     </div>
@@ -102,7 +102,7 @@ export default function Process() {
 
         {/* Bottom CTA */}
         <div className="mt-20 text-center">
-          <p className="text-[#4B5563] mb-6">
+          <p className="text-[#555555] font-semibold mb-6">
             Ready to elevate your global workforce? Partner with us today.
           </p>
           <a href="#contact" className="btn-primary inline-flex uppercase">
